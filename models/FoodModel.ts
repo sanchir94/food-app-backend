@@ -4,11 +4,9 @@ const FOOD_SCHEMA = new Schema(
   {
     foodName: String,
     price: Number,
-    imege: String,
+    image: String,
     ingredients: String,
-    category: Object,
-    createdAt: Date,
-    updatedAt: Date,
+    category: { type: Schema.Types.ObjectId, ref: "Category" },
   },
   { timestamps: true }
 );

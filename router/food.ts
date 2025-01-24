@@ -12,6 +12,8 @@ foodRouter.post("/", async (req: Request, res: Response) => {
     foodName: req.body.foodName,
     price: req.body.price,
     ingredients: req.body.ingredients,
+    image: req.body.image,
+    category: req.body.category,
   });
   res.send({
     message: "New category created",
@@ -29,7 +31,13 @@ foodRouter.put("/:id", async (req: Request, res: Response) => {
   const updateId = req.params.id.trim();
   const updated = await FoodModel.findByIdAndUpdate(
     updateId,
-    { foodName: req.body.foodName },
+    {
+      foodName: req.body.foodName,
+      price: req.body.price,
+      ingredients: req.body.ingredients,
+      image: req.body.image,
+      category: req.body.category,
+    },
     { new: true }
   );
   res.json(updated);

@@ -1,4 +1,5 @@
 import { Schema, models, model } from "mongoose";
+import { foodCategoryRouter } from "../router/food-category";
 
 const FOOD_SCHEMA = new Schema(
   {
